@@ -16,6 +16,7 @@ def count_bytes(file_path):
 
 def main():
     parser = argparse.ArgumentParser()
+    parser.add_argument("-c", "--bytes", action="store_true", help="print the byte counts")
     parser.add_argument("file", help="The file to count bytes for")
     args = parser.parse_args()
     count_bytes(args.file)
