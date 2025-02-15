@@ -2,6 +2,7 @@
 
 import argparse
 import os
+import fileinput
 
 def count_bytes(file_path):
     try:
@@ -13,10 +14,9 @@ def count_bytes(file_path):
 def count_lines(file_path):
     try:
         line_counter = 0
-        with open(file_path, 'rb') as file:
-            for _ in file:
-                line_counter += 1
-            return line_counter
+        for _ in fileinput.input(files=file_path, encoding="utf-8"):
+            line_counter += 1
+        return line_counter
     except FileNotFoundError:
         print(f"Error: File '{file_path}' not found.")
         return None
