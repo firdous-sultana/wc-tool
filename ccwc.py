@@ -3,13 +3,9 @@ import os
 
 def count_bytes(file_path):
     try:
-        byte_counter = 0
-        with open(file_path, 'rb') as file:
-            while chunk := file.read(8192):
-                byte_counter += len(chunk)
-            return byte_counter
-    except FileNotFoundError:
-        print(f"Error: File '{file_path}' not found.")
+        return os.path.getsize(file_path)
+    except OSError as e:
+        print(f"Error: {e}")
         return None
 
 def count_lines(file_path):
