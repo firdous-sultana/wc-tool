@@ -3,6 +3,8 @@
 ``` 
 Environment: Linux
 ```
+
+### Steps to create Symlink (Soft Copy)
 When creating the CLI with just `Python`, we can run it as:
 `python3 ccwc.py -c test.txt`.
 
